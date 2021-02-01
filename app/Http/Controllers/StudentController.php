@@ -27,7 +27,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        return view('student.create');
     }
 
     /**
@@ -38,7 +38,16 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+
+        Student::create([
+            'firstname' => $input['firstname'],
+            'lastname' => $input['lastname'],
+            'birthdate' => $input['birthdate'],
+            'grade' => $input['grade']
+        ]);
+
+        return redirect(route('students.index'));
     }
 
     /**

@@ -2,6 +2,9 @@
 
 @section('content')
 <div class="container">
+    <div class="p-3">
+        <a href="{{ route('students.create') }}" class="btn btn-primary">Nuevo Estudiante</a>
+    </div>
     <table class="table">
         <thead>
             <tr>
